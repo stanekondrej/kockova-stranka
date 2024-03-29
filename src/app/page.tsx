@@ -14,11 +14,17 @@ export default function Home() {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fetchfind.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F08%2Fcat-2734999_1920-5-common-cat-sounds.jpg&f=1&nofb=1&ipt=94d25d47d48500a4fd997edbb80e5eacde17a6be52dfea210d0f29fd81e5f879&ipo=images"
     ]
 
+    let i = 0;
+
     return (
         <main>
             <h1 className="text-5xl text-center m-5">Kočková stránka (pro Elišku)</h1>
             <div className="flex justify-between items-center flex-wrap">
-                {imageUrls.map(url => <img src={url} width="150px" height="150px" className="m-2 rounded-2xl"/>)}
+                {imageUrls.map(url => {
+                    let c = <img alt="kocka" key={i} src={url} width="150px" height="150px" className="m-2 rounded-2xl"/>;
+                    i++;
+                    return c;
+                })}
             </div>
         </main>
     );
